@@ -1,6 +1,7 @@
-import useSpellDetails from 'hooks/useSpellDetails'
-import Response from 'types/response'
 import { useNavigate } from 'react-router-dom'
+
+// Hooks
+import useSpellDetails from 'hooks/useSpellDetails'
 
 // Types
 import ListItemProps from './types'

@@ -1,13 +1,12 @@
-import DDlogo from 'assets/DDlogo.png'
-
+// Types
 import type HeaderProps from './types'
+
+// Assets
+import DDlogo from 'assets/DDlogo.png'
 
 const Header: React.FC<HeaderProps> = ({ handleChange }) => {
   const levels = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'All']
 
-  const handleLevelChange = (ev: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(ev.currentTarget.value)
-  }
   return (
     <div className="m-12">
       <img src={DDlogo} className="w-4/12" alt="logo" />
@@ -20,7 +19,6 @@ const Header: React.FC<HeaderProps> = ({ handleChange }) => {
       <select
         onChange={handleChange}
         defaultValue={location.hash.substring(1)}
-        // onChange={handleLevelChange}
         id="levels"
         className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 max-w-screen-lg "
       >

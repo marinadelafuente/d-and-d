@@ -11,7 +11,7 @@ import {
 import './index.css'
 
 // Pages / Components
-import App from './App'
+import App from './pages/App'
 import DetailedItemModal from 'components/DetailedItemModal'
 import ErrorPage from 'pages/ErrorPage'
 

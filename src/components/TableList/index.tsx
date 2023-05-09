@@ -1,6 +1,10 @@
 import { useParams } from 'react-router-dom'
-import TableListProps from './types'
+
+// Components
 import ListItem from '../ListItem'
+
+// Types
+import TableListProps from './types'
 
 const TableList: React.FC<TableListProps> = ({ spells }) => {
   const { id } = useParams<{ id?: string }>()

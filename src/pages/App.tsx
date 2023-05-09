@@ -1,9 +1,15 @@
 import { useState } from 'react'
 import { Outlet, useNavigate } from 'react-router-dom'
-import TableList from './components/TableList'
-import Header from './components/Header'
+
+// Hooks
 import useSpells from 'hooks/useSpells'
+
+// Pages
 import ErrorPage from 'pages/ErrorPage'
+
+// Components
+import TableList from '../components/TableList'
+import Header from '../components/Header'
 
 function App() {
   const [level, setLevel] = useState<string>(location.hash.substring(1))
