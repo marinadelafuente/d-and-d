@@ -3,7 +3,7 @@ import { Outlet, useNavigate } from 'react-router-dom'
 import TableList from './components/TableList'
 import Header from './components/Header'
 import useSpells from 'hooks/useSpells'
-import ErrorPage from 'components/ErrorPage'
+import ErrorPage from 'pages/ErrorPage'
 
 function App() {
   const [level, setLevel] = useState<string>(location.hash.substring(1))
@@ -28,7 +28,7 @@ function App() {
   return (
     <>
       <Header {...{ handleChange }} />
-      <div className="m-12 flex">
+      <div className="m-12 flex pb-10">
         <TableList {...{ spells }} />
       </div>
       <div id="detail">

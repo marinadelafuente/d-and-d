@@ -9,8 +9,8 @@ const Header: React.FC<HeaderProps> = ({ handleChange }) => {
     console.log(ev.currentTarget.value)
   }
   return (
-    <div>
-      <img src={DDlogo} className="w-4/12 p-5" alt="logo" />
+    <div className="m-12">
+      <img src={DDlogo} className="w-4/12" alt="logo" />
       <label
         htmlFor="countries"
         className="block mb-2 text-sm font-medium text-gray-900 "

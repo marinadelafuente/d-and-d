@@ -1,4 +1,4 @@
-import ErrorPage from 'components/ErrorPage'
+import ErrorPage from 'pages/ErrorPage'
 import useSpellDetails from 'hooks/useSpellDetails'
 import { useParams, useNavigate } from 'react-router-dom'
 

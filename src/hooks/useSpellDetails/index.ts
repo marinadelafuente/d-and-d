@@ -1,7 +1,11 @@
-import isError from 'helpers/isError'
 import { useEffect, useState } from 'react'
-import { SpellDetailed } from 'types/spell'
-import Response from 'types/response'
+
+// Helpers
+import isError from 'helpers/isError'
+
+// Types
+import type { SpellDetailed } from 'types/spell'
+import type Response from 'types/response'
 
 const useSpellDetails = (url: string): Response<SpellDetailed> => {
   const [details, setDetails] = useState<SpellDetailed>()

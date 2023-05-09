@@ -1,6 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import {
+  createBrowserRouter,
+  RouterProvider,
+  redirect,
+  Navigate
+} from 'react-router-dom'
 
 // CSS
 import './index.css'
@@ -8,7 +13,7 @@ import './index.css'
 // Pages / Components
 import App from './App'
 import DetailedItemModal from 'components/DetailedItemModal'
-import ErrorPage from 'components/ErrorPage'
+import ErrorPage from 'pages/ErrorPage'
 
 const router = createBrowserRouter([
   {
@@ -21,7 +26,8 @@ const router = createBrowserRouter([
         element: <DetailedItemModal />
       }
     ]
-  }
+  },
+  { path: '/', element: <Navigate to="/spells" replace /> }
 ])
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
