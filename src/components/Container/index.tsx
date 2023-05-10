@@ -6,7 +6,7 @@ import type ContainerProps from "./types";
 const Container = ({ children, showSaved }: ContainerProps) => {
 	return (
 		<div
-			className={`mx-auto bg-[url('assets/DDimage.png')] w-full m-0 ${
+			className={`mx-auto bg-[url('DDimage.png')] w-full m-0 ${
 				showSaved ? "h-full" : ""
 			}`}>
 			<div

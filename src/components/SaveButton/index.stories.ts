@@ -1,23 +1,23 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from "@storybook/react";
 
-import { SaveButton } from '.'
+import SaveButton from ".";
 
 const meta = {
-  title: 'Components/SaveButton',
-  component: SaveButton
-} satisfies Meta<typeof SaveButton>
+	title: "Components/SaveButton",
+	component: SaveButton,
+} satisfies Meta<typeof SaveButton>;
 
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 export const Filled: Story = {
-  args: {
-    isFilled: true
-  }
-}
+	args: {
+		isSelected: true,
+	},
+};
 
 export const Empty: Story = {
-  args: {
-    isFilled: false
-  }
-}
+	args: {
+		isSelected: false,
+	},
+};
