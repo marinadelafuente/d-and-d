@@ -1,37 +1,38 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
+import React from "react";
+import ReactDOM from "react-dom/client";
 import {
-  createBrowserRouter,
-  RouterProvider,
-  redirect,
-  Navigate
-} from 'react-router-dom'
+	createBrowserRouter,
+	RouterProvider,
+	Navigate,
+} from "react-router-dom";
 
 // CSS
-import './index.css'
+import "./index.css";
 
-// Pages / Components
-import App from './pages/App'
-import DetailedItemModal from 'components/DetailedItemModal'
-import ErrorPage from 'pages/ErrorPage'
+// Pages
+import Homepage from "./pages/Homepage";
+import ErrorPage from "pages/ErrorPage";
+
+//Components
+import DetailedItemModal from "components/DetailedItemModal";
 
 const router = createBrowserRouter([
-  {
-    path: '/spells',
-    element: <App />,
-    errorElement: <ErrorPage />,
-    children: [
-      {
-        path: '/spells/:id',
-        element: <DetailedItemModal />
-      }
-    ]
-  },
-  { path: '/', element: <Navigate to="/spells" replace /> }
-])
+	{
+		path: "/spells",
+		element: <Homepage />,
+		errorElement: <ErrorPage />,
+		children: [
+			{
+				path: "/spells/:id",
+				element: <DetailedItemModal />,
+			},
+		],
+	},
+	{ path: "/", element: <Navigate to="/spells" replace /> },
+]);
 
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>
-)
+ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
+	<React.StrictMode>
+		<RouterProvider {...{ router }} />
+	</React.StrictMode>,
+);

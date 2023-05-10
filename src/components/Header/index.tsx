@@ -1,35 +1,45 @@
+// Components
+import SaveButton from "components/SaveButton";
+
 // Types
-import type HeaderProps from './types'
+import type HeaderProps from "./types";
 
 // Assets
-import DDlogo from 'assets/DDlogo.png'
+import DDlogo from "assets/DDlogo.png";
 
-const Header: React.FC<HeaderProps> = ({ handleChange }) => {
-  const levels = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'All']
+const Header: React.FC<HeaderProps> = ({
+	handleLevelChange,
+	showSavedSpells,
+	showSaved,
+}) => {
+	const levels = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "All"];
 
-  return (
-    <div className="m-12">
-      <img src={DDlogo} className="w-4/12" alt="logo" />
-      <label
-        htmlFor="countries"
-        className="block mb-2 text-sm font-medium text-gray-900 "
-      >
-        Choose a level
-      </label>
-      <select
-        onChange={handleChange}
-        defaultValue={location.hash.substring(1)}
-        id="levels"
-        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 max-w-screen-lg "
-      >
-        {levels.map((level) => (
-          <option key={level} value={level}>
-            {level}
-          </option>
-        ))}
-      </select>
-    </div>
-  )
-}
+	return (
+		<div className=" pb-10">
+			<img src={DDlogo} className="w-3/12" alt="logo" />
+			<div className="flex items-end gap-5">
+				<div>
+					<label
+						htmlFor="countries"
+						className="block mb-2 text-sm font-medium text-white ">
+						Choose a level
+					</label>
+					<select
+						onChange={handleLevelChange}
+						defaultValue={location.hash.substring(1)}
+						id="levels"
+						className="bg-gray-50 border text-gray-900 text-sm border-b-3 border-neutral-300 rounded-lg shadow focus:ring-red-500 focus:red-blue-500 block w-full p-1.5 pl-3 appearance-none bg-[url('assets/download.svg')] bg-right bg-no-repeat bg-[length:30px_25px]">
+						{levels.map((level) => (
+							<option key={level} value={level}>
+								{level}
+							</option>
+						))}
+					</select>
+				</div>
+				<SaveButton onClick={showSavedSpells} isSelected={showSaved} />
+			</div>
+		</div>
+	);
+};
 
-export default Header
+export default Header;

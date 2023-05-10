@@ -1,15 +1,15 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { withRouter } from "storybook-addon-react-router-v6";
 
-// Component
-import ListItem from ".";
+// Components
+import Homepage from ".";
 
 // Mock Data
 import { data } from "mockData";
 
 const meta = {
-	title: "Components/ListItem ",
-	component: ListItem,
+	title: "Pages/Homepage ",
+	component: Homepage,
 	decorators: [withRouter],
 	parameters: {
 		layout: "fullscreen",
@@ -19,21 +19,14 @@ const meta = {
 				method: "GET",
 				status: 200,
 				response: {
-					data: data[0],
+					data: data,
 				},
 			},
 		],
 	},
-} satisfies Meta<typeof ListItem>;
+} satisfies Meta<typeof Homepage>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
-	args: {
-		name: "Sacred-flame",
-		url: "/api/spells/sacred-flame",
-		id: "sacred-flame",
-		isEven: true,
-	},
-};
+export const Primary: Story = {};
