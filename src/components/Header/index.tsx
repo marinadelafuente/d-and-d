@@ -1,3 +1,5 @@
+import { useParams } from "react-router-dom";
+
 // Components
 import SaveButton from "components/SaveButton";
 
@@ -9,10 +11,11 @@ const Header: React.FC<HeaderProps> = ({
 	showSavedSpells,
 	showSaved,
 }) => {
+	const { id } = useParams<{ id?: string }>();
 	const levels = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "All"];
 
 	return (
-		<div className=" pb-10">
+		<div className={`pb-10 ${!!id && "blur-sm"}`}>
 			<img src="DDlogo.png" className="w-3/12" alt="logo" />
 			<div className="flex items-end gap-5">
 				<div>
@@ -22,6 +25,7 @@ const Header: React.FC<HeaderProps> = ({
 						Choose a level
 					</label>
 					<select
+						disabled={showSaved}
 						onChange={handleLevelChange}
 						defaultValue={location.hash.substring(1)}
 						id="levels"
