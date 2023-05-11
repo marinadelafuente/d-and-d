@@ -25,7 +25,7 @@ const DetailedItemModal: React.FC = () => {
 
 	const closeModal = (eventToPrevent: SyntheticEvent | null) => {
 		eventToPrevent?.preventDefault();
-		navigate("/spells");
+		navigate(-1);
 	};
 	return (
 		<>
@@ -103,7 +103,6 @@ const DetailedItemModal: React.FC = () => {
 					</div>
 				</div>
 			</div>
-
 			<div
 				modal-backdrop=""
 				className="bg-gray-900 bg-opacity-50 fixed inset-0 z-40"></div>

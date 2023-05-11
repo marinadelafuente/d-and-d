@@ -29,7 +29,7 @@ const Header: React.FC<HeaderProps> = ({
 						onChange={handleLevelChange}
 						defaultValue={location.hash.substring(1)}
 						id="levels"
-						className="bg-gray-50 border text-gray-900 text-sm border-b-3 border-neutral-300 rounded-lg shadow focus:ring-red-500 focus:red-blue-500 block w-full p-1.5 pl-3 appearance-none bg-[url('download.svg')] bg-right bg-no-repeat bg-[length:30px_25px]">
+						className="bg-gray-50 border text-gray-900 text-sm border-b-3 border-neutral-300 rounded-lg shadow focus:ring-red-500 focus:red-blue-500 block w-full p-1.5 pl-3 appearance-none bg-[url('/download.svg')] bg-right bg-no-repeat bg-[length:30px_25px]">
 						{levels.map((level) => (
 							<option key={level} value={level}>
 								{level}
