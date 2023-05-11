@@ -61,7 +61,7 @@ const ListItem: React.FC<ListItemProps> = ({ name, url, id, isEven }) => {
 					}}
 					className={`whitespace-nowrap px-6 sm:px-8 py-3 ${
 						isEven ? "group-hover:bg-red-50" : "group-hover:bg-white"
-					} group-hover:bg-white border-s-2 border-red-300`}>
+					}  border-s-2 border-red-300`}>
 					<a
 						onClick={(ev) => {
 							ev.stopPropagation();
