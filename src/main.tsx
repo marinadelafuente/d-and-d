@@ -14,17 +14,18 @@ import Homepage from "./pages/Homepage";
 import ErrorPage from "pages/ErrorPage";
 
 //Components
-import DetailedItemModal from "components/DetailedItemModal";
+const HomePage = React.lazy(() => import("pages/Homepage"));
+const SpellDetailed = React.lazy(() => import("components/DetailedItemModal"));
 
 const router = createBrowserRouter([
 	{
 		path: "/spells",
-		element: <Homepage />,
+		element: <HomePage />,
 		errorElement: <ErrorPage />,
 		children: [
 			{
 				path: "/spells/:id",
-				element: <DetailedItemModal />,
+				element: <SpellDetailed />,
 			},
 		],
 	},
